@@ -273,14 +273,8 @@ public class LinkerField
 
                 String selected = Consts.EMPTY_VALUE;
                 String value = (String) issue.getCustomFieldValue(field);
-                for (Map.Entry<String, String> cf : cfVals.entrySet())
-                {
-                    if (value != null && cf.getKey().equals(value))
-                    {
-                        selected = value;
-                        break;
-                    }
-                }
+                if (value != null)
+                    selected = value;
 
                 if (isAutocompleteView)
                 {
